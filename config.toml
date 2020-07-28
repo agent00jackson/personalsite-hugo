@@ -1,0 +1,15 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Jackson Randolph"
+
+[params]
+favicon = "favicons/"
+
+[menu]
+  [[menu.main]]
+    identifier = "Test A"
+    url = "/testa"
+
+  [[menu.main]]
+    identifier = "Test B"
+    url = "/testb"

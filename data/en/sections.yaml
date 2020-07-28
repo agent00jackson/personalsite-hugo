@@ -1,0 +1,9 @@
+- title: Code
+  dir: code
+  icon: gg-code-slash
+- title: Photography
+  dir: photography
+  icon: gg-image
+- title: Thoughts
+  dir: blog
+  icon: gg-notes

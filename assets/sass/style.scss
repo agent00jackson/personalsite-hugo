@@ -1,0 +1,118 @@
+@import "./bulma-scheme.scss";
+
+.content-center {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.big-icon {
+  --ggs: 4;
+}
+
+.is-huge {
+  width: 6rem;
+  height: 6rem;
+}
+
+.sec-button:hover {
+  color: $primary;
+  transition: 0.2s linear;
+  //cursor: pointer;
+}
+
+.sec-button {
+  color: inherit;
+  transition: 0.2s linear;
+}
+
+.jr-logo {
+  border-style: solid;
+  border-width: 3px;
+  border-color: black;
+  padding: 3px 3px;
+  color: black;
+  font-weight: 500;
+}
+
+.jr-logo:hover{
+  border-color: $link;
+}
+
+#burger {
+  display: none;
+}
+
+//For navbar
+@media screen and (max-width: 1023px) {
+  /* show mavbar-menu on screen less than 1024px */
+  #burger:checked ~ #nav-menu { display: block; }
+
+  /* make navbar-burger become cross on screen less than 1024px */
+  #burger:checked + .navbar-burger span:nth-child(1) { transform: translateY(5px) rotate(45deg); }
+  #burger:checked + .navbar-burger span:nth-child(2) { opacity: 0; }
+  #burger:checked + .navbar-burger span:nth-child(3) { transform: translateY(-5px) rotate(-45deg); }
+  /* you can also replace + with ~ in above three rules and get the same result */
+
+  #nav-menu { left:0; right:0; top:100%; position: absolute; }
+}
+
+//Animations
+.anim-draw-border {
+  display: inline-block;
+  position:relative;
+  padding: 20px 50px;
+  outline:none;
+  border: none;
+  box-shadow: none;
+  background-image: 
+  linear-gradient(#000000, #000000), 
+  linear-gradient(#000000, #000000), 
+  linear-gradient(#000000, #000000), 
+  linear-gradient(#000000, #000000);
+  
+  background-position: 0 0, 0 0, 0 100%, 0 100%;
+  background-size: 3px 0%, 0% 3px, 0% 3px, 3px 0%;
+  background-color:transparent;
+  background-repeat:no-repeat;
+
+  animation: a-draw-border 1.4s linear 1 0.4s;
+  animation-fill-mode: forwards;
+}
+.anim-draw-border::before {
+  content:"";
+  position:absolute;
+  z-index:-1;
+  top:0;
+  right:0;
+  left:0;
+  bottom:0;
+  border:0px solid #000000;
+}
+
+@keyframes a-draw-border {
+  0%{
+  background-position: 0 0, 0 0, 0 100%, 0 100%;
+  background-size: 3px 0%, 0% 3px, 0% 3px, 3px 0%;
+  }
+  20% {
+  background-position: 0 100%, 0 0, 0 100%, 100% 0;
+  background-size: 3px 0%, 100% 3px, 0% 3px,3px 0%;
+  }
+  40% {
+  background-position: 0 100%, 100% 0, 100% 100%, 100% 0;
+  background-size: 3px 0%, 100% 3px, 0% 3px,3px 100%;
+  }
+  60% {
+  background-position: 0 100%, 100% 0, 100% 100%, 100% 100%;
+  background-size: 3px 0%, 100% 3px, 100% 3px,3px 100%
+  }
+  70% {
+  background-position: 0 100%, 100% 0, 100% 100%, 100% 100%;
+  background-size: 3px 100%, 100% 3px, 100% 3px,3px 100%;
+  }
+  100% {
+  background-position: 0% 100%, 100% 0, 100% 100%, 100% 100%;
+  background-size: 3px 100%, 100% 3px, 100% 3px,3px 100%;
+  }
+}

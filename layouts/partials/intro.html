@@ -1,0 +1,15 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+{{ with $data.intro }}
+      <div class="has-text-centered">
+        <div class="title anim-draw-border">
+            {{ range $i, $e := .title }}
+                {{ if $i }} <br/> {{ end }} {{ .line }}
+            {{ end }}
+        </div>
+        <h2 class="subtitle">
+            {{ range $i, $e := .description }}
+                {{ if $i }} <br/> {{ end }} {{ .line }}
+            {{ end }}
+        </h2>
+      </div>
+{{ end }}

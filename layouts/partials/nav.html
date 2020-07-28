@@ -1,0 +1,21 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <div class="navbar-item">
+            <a class="jr-logo" href="/">Jackson Randolph</a>
+        </div>
+        <label for="burger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </label>
+
+    </div>
+    <input type="checkbox" id="burger"/>
+    <div class="navbar-menu" id="nav-menu">
+        {{ range $i, $e := .Site.Sections }}
+        <a class="navbar-item" href="{{ $e.Permalink }}">{{ $e.Title }}</a>
+        {{ end }}
+    </div>
+</nav>

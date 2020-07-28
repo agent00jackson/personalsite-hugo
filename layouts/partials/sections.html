@@ -1,0 +1,17 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+<div class="tile is-ancestor has-text-centered mt-3">
+    {{ range $i, $e := .Site.Sections }}
+    <div class="tile is-parent">
+        <a class="tile is-child box py-6 sec-button" href="{{ $e.Permalink }}">
+            <div class="content">
+                <span class="icon is-huge">
+                    <i class="{{ $e.Params.icon }} big-icon"></i>
+                </span>
+                <br/>
+                {{ $e.Title }}
+            </div>
+        </a>
+    </div>
+    {{ end }}
+</div>

@@ -1,0 +1,22 @@
+	<head>
+		<title>{{ if eq (.Site.Title) (.Title) }}{{ .Site.Title }}{{ else }}{{ .Title }} &middot; {{ .Site.Title }}{{ end }}</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		
+		<!-- Favicons -->
+		<link rel="shortcut icon" href="{{ .Site.Params.favicon | absURL }}favicon.ico" type="image/x-icon">
+    	<link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.Params.favicon | absURL }}apple-touch-icon.png">
+    	<link rel="icon" type="image/png" sizes="32x32" href="{{ .Site.Params.favicon | absURL }}favicon-32x32.png">
+    	<link rel="icon" type="image/png" sizes="16x16" href="{{ .Site.Params.favicon | absURL }}favicon-16x16.png">
+		
+		<!-- CSS -->
+		{{ if .Site.IsServer }}
+		{{ $style := resources.Get "sass/style.scss" | resources.ExecuteAsTemplate "style.scss" . | toCSS (dict "targetPath" "assets/css/style.css" "enableSourceMap" true) }}
+		<link rel="stylesheet" href="{{ ($style).RelPermalink }}">
+		{{ else }}
+		{{ $style := resources.Get "sass/style.scss" | resources.ExecuteAsTemplate "style.scss" . | toCSS (dict "targetPath" "assets/css/style.css" "enableSourceMap" false) }}
+		<link rel="stylesheet" href="{{ ($style | minify).RelPermalink }}">
+		{{ end }}
+
+		<link href='https://cdn.jsdelivr.net/npm/css.gg/icons/all.css' rel='stylesheet'>
+	</head>

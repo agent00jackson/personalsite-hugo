@@ -1,9 +1,85 @@
 @import "./bulma-scheme.scss";
 
+body{
+  color: black;
+}
+
+.body{
+  min-height: 100vh;
+}
+
+.blurb-div{
+  border-right: 1px solid;
+  border-image-source: linear-gradient(0, transparent, $grey-light, transparent);
+  border-image-slice: 1;
+  width: 1px;
+  height: 100%;
+}
+
+.blurb{
+  max-width: 30%;
+  min-width: 10rem;
+}
+
+.blurb-holder{
+  margin: 2rem 0 2rem 0;
+}
+
+@media screen and (max-width: 768px){
+  .blurb-div{
+    border-right: 0px;
+    border-bottom: 1px solid;
+    border-image-source: linear-gradient(90deg, transparent, $grey-light, transparent);
+    border-image-slice: 1;
+    padding-bottom: .25rem;
+    height: 1px;
+    width:100%;
+    margin-bottom: .5rem;
+  }
+  
+  .blurb{
+    max-width: 100%;
+  }
+}
+
+.blurb-div:last-child{
+  border-right: 0px;
+  border-bottom: 0px;
+}
+
 .content-center {
   display:flex;
   justify-content:center;
   align-items:center;
+}
+
+.gallery-card {
+  color: white;
+  width: 12rem;
+  height: 10rem;
+  margin: .1rem .1rem;
+  position: relative;
+}
+
+.vr{
+  color:black;
+  height: 100%;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.gallery-card>.icon>i{
+  transition: .2s ease;
+}
+
+.gallery-card:hover>.icon>i{
+  --ggs: 1.5;
+}
+
+.bottomright {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
 }
 
 .big-icon {
@@ -39,19 +115,23 @@
   border-color: $link;
 }
 
+//For navbar
 #burger {
   display: none;
 }
 
-//For navbar
+.navbar-burger {
+  user-select: none;
+}
+
 @media screen and (max-width: 1023px) {
   /* show mavbar-menu on screen less than 1024px */
   #burger:checked ~ #nav-menu { display: block; }
 
   /* make navbar-burger become cross on screen less than 1024px */
-  #burger:checked + .navbar-burger span:nth-child(1) { transform: translateY(5px) rotate(45deg); }
-  #burger:checked + .navbar-burger span:nth-child(2) { opacity: 0; }
-  #burger:checked + .navbar-burger span:nth-child(3) { transform: translateY(-5px) rotate(-45deg); }
+  #burger:checked + .navbar-brand>.navbar-burger span:nth-child(1) { transform: translateY(5px) rotate(45deg); }
+  #burger:checked + .navbar-brand>.navbar-burger span:nth-child(2) { opacity: 0; }
+  #burger:checked + .navbar-brand>.navbar-burger span:nth-child(3) { transform: translateY(-5px) rotate(-45deg); }
   /* you can also replace + with ~ in above three rules and get the same result */
 
   #nav-menu { left:0; right:0; top:100%; position: absolute; }

@@ -1,9 +1,9 @@
 +++
-title = "Poop"
+title = "Post 2"
 date = 2020-05-26T23:05:00-04:00
 draft = true
 description = 'Computer Science major with a love for problem solving. I have experience developing Windows applications and data science, currently trying to figure out which I like better.'
-weight = 3
+weight = 2
 +++
 Computer Science major with a love for problem solving. I have experience developing Windows applications and data science, currently trying to figure out which I like better.
 

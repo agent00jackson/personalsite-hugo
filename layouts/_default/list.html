@@ -7,4 +7,53 @@
         </div>
     </div>
 </section>
+<section class="is-flex">
+    {{ range .Pages.ByPublishDate.Reverse }}
+        {{ $w := 1}}
+        {{ if .Weight }}
+            {{ $w = div 12 .Weight }}
+        {{ end }}
+            <a href="{{ .Permalink }}">
+                <div class="gallery-card">
+                    <span class="icon bottomright">
+                        <i class="gg-maximize-alt"></i>
+                    </span>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/House_at_94_Grandview_Avenue_Quincy_MA_01.jpg" />
+                </div>
+            </a>
+    {{ end }}
+</section>
+<section class="section">
+<div clas="container">
+<nav class="level blurb-holder">
+    <div class="level-item blurb">
+        <div>
+            <h2 class="title is-size-4 has-text-centered">Title</h2>
+            <p class="content is-size-6">
+                A fellow agent with SUPRA access serving beyond the Atlanta area and delivering 20 images!
+            </p>
+        </div>
+    </div>
+    <div class="blurb-div"></div>
+    <div class="level-item blurb">
+        <div>
+            <h2 class="title is-size-4 has-text-centered">Title</h2>
+            <p class="content is-size-6">
+                A fellow agent with SUPRA access serving beyond the Atlanta area and delivering 20 images!
+            </p>
+        </div>
+    </div>
+    <div class="blurb-div"></div>
+    <div class="level-item blurb">
+        <div>
+            <h2 class="title is-size-4 has-text-centered">Title</h2>
+            <p class="content is-size-6">
+                A fellow agent with SUPRA access serving beyond the Atlanta area and delivering 20 images!
+            </p>
+        </div>
+    </div>
+    <div class="blurb-div"></div>
+</nav>
+</div>
+</section>
 {{- end -}}

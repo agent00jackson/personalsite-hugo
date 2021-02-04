@@ -1,0 +1,17 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+<div class="has-text-centered">
+  <h2 class="subtitle">
+  {{- range $name, $path := $data.social }}
+    {{/* social icons */}}
+    {{- if $path }}
+      {{- $realName := $name}}
+      {{- $filePath := (print "svg/" $realName ".svg") }}
+      <a href="{{ $path | safeURL }}" rel="me noopener" class="iconfont"
+        title="{{ $realName }}" {{ if not (hasPrefix $path "mailto:") }} target="_blank"
+        {{ end }}>
+        {{ partial $filePath }}
+      </a>
+    {{- end }}
+  {{- end }}
+  </h2>
+</div>

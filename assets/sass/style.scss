@@ -4,6 +4,11 @@ body{
   color: black;
 }
 
+a:hover svg.icon{
+  filter: invert(57%) sepia(32%) saturate(748%) hue-rotate(301deg) brightness(99%) contrast(98%);
+  transition: .2s;
+}
+
 .break{
   min-height: .5em;
   width: 0;
